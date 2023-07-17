@@ -55,14 +55,16 @@ class MainActivity : ComponentActivity() {
                         delta
                     }
 
-                    LazyRow(state = stateRowTop, userScrollEnabled = false){
-                        stickyHeader{
-                            TitleTopAndDown()
-                        }
-                        items(20){index->
-                            TitleTopAndDown()
-                        }
-                    }
+//                    LazyRow(state = stateRowTop, userScrollEnabled = false){
+//                        stickyHeader{
+//                            Surface(Modifier.fillMaxWidth()) {
+//                                TitleTopAndDown()
+//                            }
+//                        }
+//                        items(20){index->
+//                            TitleTopAndDown()
+//                        }
+//                    }
                     LazyColumn( // 整張表
                         horizontalAlignment = Alignment.CenterHorizontally,
                         modifier = Modifier
@@ -73,40 +75,39 @@ class MainActivity : ComponentActivity() {
                                 flingBehavior = ScrollableDefaults.flingBehavior()
                             )
                     ) {
-                        //TODO: items
-//                        stickyHeader {
-////                            RepoTitle(stateRowTop)
-//                            LazyRow(state = stateRowTop, userScrollEnabled = false) {
-//                                items(20) { index ->
-//                                    TitleTopAndDown()
-//                                }
-//
-//                            }
-//                        }
-
-                        item {
+                        stickyHeader {
                             LazyRow(state = stateRowTop, userScrollEnabled = false){
                                 stickyHeader{
-                                    TitleTopAndDown()
+                                    Surface(Modifier.fillMaxWidth()) {
+                                        TitleTopAndDown()
+                                    }
                                 }
                                 items(20){index->
-//                                    val gridState = rememberLazyGridState()
-//                                    ScrollableHorizontalData(gridState)
-
                                     TitleTopAndDown()
                                 }
                             }
                         }
+//                        item {
+//                            LazyRow(state = stateRowTop, userScrollEnabled = false){
+//                                stickyHeader{
+//                                    Surface(Modifier.fillMaxWidth()) {
+//                                        TitleTopAndDown()
+//                                    }
+//                                }
+//                                items(20){index->
+//                                    TitleTopAndDown()
+//                                }
+//                            }
+//                        }
 
                         item {
                             LazyRow(state = stateRowX, userScrollEnabled = false, modifier = Modifier.height(250.dp)){
                                 stickyHeader{
-                                    CustomStickyHeader()
+                                    Surface(Modifier.fillMaxWidth()) {
+                                        CustomStickyHeader()
+                                    }
                                 }
                                 items(20){index->
-//                                    val gridState = rememberLazyGridState()
-//                                    ScrollableHorizontalData(gridState)
-
                                     Column() {
                                         Text(text = "測試 ${index}-1", modifier = Modifier.padding(horizontal = 5.dp))
                                         Text(text = "測試 ${index}-1", modifier = Modifier.padding(horizontal = 5.dp))
@@ -119,12 +120,11 @@ class MainActivity : ComponentActivity() {
                         item {
                             LazyRow(state = stateRowY, userScrollEnabled = false, modifier = Modifier.height(250.dp)){
                                 stickyHeader{
-                                    CustomStickyHeader()
+                                    Surface(Modifier.fillMaxWidth()) {
+                                        CustomStickyHeader()
+                                    }
                                 }
                                 items(20){index->
-//                                    val gridState = rememberLazyGridState()
-//                                    ScrollableHorizontalData(gridState)
-
                                     Column() {
                                         Text(text = "測試 ${index}-2", modifier = Modifier.padding(horizontal = 5.dp))
                                         Text(text = "測試 ${index}-2", modifier = Modifier.padding(horizontal = 5.dp))
@@ -138,12 +138,11 @@ class MainActivity : ComponentActivity() {
                         item {
                             LazyRow(state = stateRowZ, userScrollEnabled = false, modifier = Modifier.height(250.dp)){
                                 stickyHeader{
-                                    CustomStickyHeader()
+                                    Surface(Modifier.fillMaxWidth()) {
+                                        CustomStickyHeader()
+                                    }
                                 }
                                 items(20){index->
-//                                    val gridState = rememberLazyGridState()
-//                                    ScrollableHorizontalData(gridState)
-
                                     Column() {
                                         Text(text = "測試 ${index}-3", modifier = Modifier.padding(horizontal = 5.dp))
                                         Text(text = "測試 ${index}-3", modifier = Modifier.padding(horizontal = 5.dp))
@@ -157,12 +156,11 @@ class MainActivity : ComponentActivity() {
                         item {
                             LazyRow(state = stateRowXX, userScrollEnabled = false, modifier = Modifier.height(250.dp)){
                                 stickyHeader{
-                                    CustomStickyHeader()
+                                    Surface(Modifier.fillMaxWidth()) {
+                                        CustomStickyHeader()
+                                    }
                                 }
                                 items(20){index->
-//                                    val gridState = rememberLazyGridState()
-//                                    ScrollableHorizontalData(gridState)
-
                                     Column() {
                                         Text(text = "測試 ${index}-4", modifier = Modifier.padding(horizontal = 5.dp))
                                         Text(text = "測試 ${index}-4", modifier = Modifier.padding(horizontal = 5.dp))
@@ -173,17 +171,7 @@ class MainActivity : ComponentActivity() {
                                 }
                             }
                         }
-
-//                        items(6) { index ->
-//                            val gridState = rememberLazyGridState()
-//                            Row(modifier = Modifier.fillMaxWidth(),
-//                                horizontalArrangement = Arrangement.Center,) {
-//                                CustomStickyHeader()
-//                                ScrollableHorizontalData(gridState)
-//                            }
-//                        }
                     }
-//                    TwoLazyRows()
                 }
             }
         }
